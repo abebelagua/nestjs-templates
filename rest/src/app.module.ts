@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 
-import { configModule } from '../../config/config.module';
+import { configModule } from './config';
 
-import { UserModule } from '../user';
+import { UserModule } from './features/user';
 
-import { HealthController } from './controllers';
+import { HealthController } from './health.controller';
 
 @Module({
 	imports: [configModule, UserModule],

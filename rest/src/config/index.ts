@@ -1,5 +1,3 @@
 export * from './runtime';
-export * from './runtime';
-export * from './runtime';
 
-export * from './config-loader.factory';
+export * from './config.module';
