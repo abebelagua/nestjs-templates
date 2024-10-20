@@ -1,0 +1,24 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Base API (LOCAL ENV)",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "yarn",
+			"runtimeArgs": [
+				"debug"
+			],
+			"skipFiles": [
+				"<node_internals>/**",
+				"**/node_modules",
+				"**/node_modules/@nestjs/**"
+			],
+			"sourceMaps": true,
+			"env": {},
+			"envFile": "${workspaceRoot}/base/.env",
+			"cwd": "${workspaceRoot}/base",
+			"console": "integratedTerminal"
+		},
+	]
+}
