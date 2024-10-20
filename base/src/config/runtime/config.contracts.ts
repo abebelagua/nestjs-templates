@@ -39,9 +39,6 @@ export interface RuntimeConfig {
 	SERVER_PORT: number | string;
 	// logging
 	LOG_LEVEL: LogLevel;
-	// openapi
-	OAS_ENABLED: boolean;
-	OAS_PATH: string;
 }
 
 export const runtimeConfigSchema: SchemaMap<RuntimeConfig> = {
@@ -60,7 +57,4 @@ export const runtimeConfigSchema: SchemaMap<RuntimeConfig> = {
 		.valid(LOG_ERROR, LOG_WARN, LOG_DEBUG, LOG_VERBOSE)
 		.default(LOG_ERROR)
 		.messages({ msg }),
-	// openapi
-	OAS_ENABLED: Joi.boolean().default(true),
-	OAS_PATH: Joi.string().default('/docs'),
 };

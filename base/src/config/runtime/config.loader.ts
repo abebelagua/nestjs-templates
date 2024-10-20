@@ -14,9 +14,6 @@ export const loadRuntimeConfig = createConfigLoader<RuntimeConfig>(
 		'SERVER_PORT',
 		// Logging
 		'LOG_LEVEL',
-		// OpenAPI
-		'OAS_ENABLED',
-		'OAS_PATH',
 	],
 	() => ({
 		APP_VERSION: getAppVersion(),
