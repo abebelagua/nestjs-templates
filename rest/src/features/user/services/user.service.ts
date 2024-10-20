@@ -9,8 +9,6 @@ const users: IUser[] = [];
 
 @Injectable()
 export class UserService {
-	constructor() {}
-
 	create(createUserDto: CreateUserDto) {
 		const user: IUser = {
 			id: uuidv7(),
