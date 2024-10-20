@@ -6,6 +6,7 @@ import {
 	CONFIG_KEY_RUNTIME,
 	runtimeConfigSchema,
 } from './runtime';
+import { authConfigSchema, CONFIG_KEY_AUTH, loadAuthConfig } from './auth';
 
 import { AppConfig } from './app-config.contract';
 
@@ -14,9 +15,10 @@ export const configModule = ConfigModule.forRoot({
 	cache: true,
 	ignoreEnvFile: false,
 	expandVariables: true,
-	load: [loadRuntimeConfig],
+	load: [loadRuntimeConfig, loadAuthConfig],
 	validationSchema: Joi.object<AppConfig>({
 		[CONFIG_KEY_RUNTIME]: runtimeConfigSchema,
+		[CONFIG_KEY_AUTH]: authConfigSchema,
 		// add other config schemas here
 	}),
 });

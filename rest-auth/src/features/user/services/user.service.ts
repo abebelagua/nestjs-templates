@@ -48,4 +48,8 @@ export class UserService {
 		users.splice(index, 1);
 		return users[index];
 	}
+
+	getUserByPassword(username: string) {
+		return users.find((user) => user.username === username);
+	}
 }
