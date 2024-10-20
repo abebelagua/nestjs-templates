@@ -20,5 +20,24 @@
 			"cwd": "${workspaceRoot}/base",
 			"console": "integratedTerminal"
 		},
+		{
+			"name": "Debug Rest API (LOCAL ENV)",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "yarn",
+			"runtimeArgs": [
+				"debug"
+			],
+			"skipFiles": [
+				"<node_internals>/**",
+				"**/node_modules",
+				"**/node_modules/@nestjs/**"
+			],
+			"sourceMaps": true,
+			"env": {},
+			"envFile": "${workspaceRoot}/rest/.env",
+			"cwd": "${workspaceRoot}/rest",
+			"console": "integratedTerminal"
+		},
 	]
 }
