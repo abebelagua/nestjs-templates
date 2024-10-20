@@ -11,6 +11,13 @@ const logger = new Logger('Bootstrap');
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 
+	const configService: ConfigService = app.get(ConfigService);
+	const { API_URL, SERVER_PORT } =
+		configService.get<RuntimeConfig>(CONFIG_KEY_RUNTIME);
+
 	await app.listen(SERVER_PORT);
+
+	logger.log(`Application is running on: ${API_URL}`);
+	logger.log(`Application name: ${configService.get('APP_NAME')}`);
 }
 bootstrap();
